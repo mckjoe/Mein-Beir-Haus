@@ -36,6 +36,15 @@ function KegList(){
           display: grid;
           grid-template-columns: 1fr 1fr 1fr;
         }
+        @media screen and (max-width: 700px) {
+          .grid {
+            grid-template-columns: 1fr 1fr;
+          }
+        @media screen and (max-width: 400px) {
+          .grid {
+            grid-template-columns: 1fr;
+          }
+        }
       `}</style>
       <hr/>
       <div className="grid">
