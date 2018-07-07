@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { v4 } from 'uuid';
 
 function NewKegForm(props){
   let _img = null;
@@ -11,7 +12,7 @@ function NewKegForm(props){
 
   function handleNewKegFormSubmission(e) {
     e.preventDefault();
-    props.onNewKegCreation({img: _img.value, name: _name.value, maker: _maker.value, abv: parseInt(_abv.value), cost: _cost.value, pints: parseInt(_pints.value) });
+    props.onNewKegCreation({img: _img.value, name: _name.value, maker: _maker.value, abv: parseInt(_abv.value), cost: _cost.value, pints: parseInt(_pints.value), id: v4() });
     _img.value = '';
     _name.value = '';
     _maker.value = '';

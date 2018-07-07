@@ -3,6 +3,7 @@ import Keg from './Keg';
 import PropTypes from 'prop-types';
 
 function KegList(props){
+  console.log(props.kegList);
   return(
     <div>
       <style jsx>{`
@@ -22,14 +23,14 @@ function KegList(props){
       `}</style>
       <hr/>
       <div className="grid">
-      {props.kegList.map((keg, index) =>
+      {props.kegList.map((keg) =>
         <Keg img={keg.img}
           name={keg.name}
           maker={keg.maker}
           abv={keg.abv}
           cost={keg.cost}
           pints={keg.pints}
-          key={index} />
+          key={keg.id} />
       )}
       </div>
     </div>

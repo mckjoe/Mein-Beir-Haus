@@ -20,7 +20,8 @@ class App extends React.Component {
           maker: 'Miller',
           abv: 4.66,
           cost: '3.00',
-          pints: 124
+          pints: 124,
+          id: "1"
         },
         {
           img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVWEzweNWFIf_y4Vr2Jp3lzVejwszrND5pB2-4SQkV9lUyQfUR',
@@ -28,7 +29,8 @@ class App extends React.Component {
           maker: 'Olde Englilsh',
           abv: 7.5,
           cost: '2.00',
-          pints: 124
+          pints: 124,
+          id: "2"
         },
         {
           img: 'https://hips.hearstapps.com/pop.h-cdn.co/assets/cm/15/05/54cb236e6459e_-_xmas-beer-1213-mdn.jpg',
@@ -36,7 +38,8 @@ class App extends React.Component {
           maker: 'Milwaukees Best',
           abv: 6.9,
           cost: '3.00',
-          pints: 124
+          pints: 124,
+          id: "3"
         }
       ]
     };
