@@ -10,6 +10,12 @@ function Home() {
           display: grid;
           grid-template-columns: 2fr 1fr;
         }
+        @media screen and (max-width: 300px) {
+          .grid {
+            display: flex;
+            flex-direction: column;
+          }
+        }
       `}</style>
       <div className="grid">
         <KegList />
