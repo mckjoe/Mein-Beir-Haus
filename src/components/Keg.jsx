@@ -19,6 +19,9 @@ function Keg(props) {
         p {
           margin: 0;
         }
+        button {
+          margin-top: 15px;
+        }
       `}</style>
       <div>
         <img src={props.img} />

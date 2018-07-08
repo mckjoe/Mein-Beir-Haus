@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { v4 } from 'uuid';
+import KegList from './KegList';
 
 function NewKegForm(props){
   let _img = null;
@@ -41,6 +42,9 @@ function NewKegForm(props){
           height: 25px;
           margin: 25px auto 30px auto ;
         }
+        div {
+          color: black
+        }
       `}</style>
       <div>
         <form onSubmit={handleNewKegFormSubmission}>
@@ -53,12 +57,14 @@ function NewKegForm(props){
           <button type="submit">Add Keg</button>
         </form>
       </div>
+      <KegList kegList={props.kegList} />
     </div>
   )
 }
 
 NewKegForm.propTypes = {
-  onNewKegCreation: PropTypes.func
+  onNewKegCreation: PropTypes.func,
+  kegList: PropTypes.array
 }
 
 export default NewKegForm;
