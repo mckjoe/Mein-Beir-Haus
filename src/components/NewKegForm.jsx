@@ -5,7 +5,10 @@ import KegList from './KegList';
 import KegDetail from './KegDetail';
 
 function NewKegForm(props){
-  console.log(props.currentRouterPath);
+  let optionalSelectedKegContent = null;
+  if (props.selectedKeg != null) {
+    optionalSelectedKegContent = <KegDetail selectedKeg={props.selectedKeg} />;
+  }
   let _img = null;
   let _name = null;
   let _maker = null;
@@ -59,8 +62,9 @@ function NewKegForm(props){
           <button type="submit">Add Keg</button>
         </form>
       </div>
-      <KegDetail />
+      {optionalSelectedKegContent}
       <KegList kegList={props.kegList} currentRouterPath={props.currentRouterPath} onKegSelection={props.onKegSelection} />
+
     </div>
   )
 }
@@ -69,7 +73,8 @@ NewKegForm.propTypes = {
   onNewKegCreation: PropTypes.func,
   kegList: PropTypes.array,
   currentRouterPath: PropTypes.string.isRequired,
-  onKegSelection: PropTypes.func.isRequired
+  onKegSelection: PropTypes.func.isRequired,
+  selectedKeg: PropTypes.object
 }
 
 export default NewKegForm;

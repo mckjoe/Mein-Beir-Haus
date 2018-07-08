@@ -21,7 +21,8 @@ class NewKegControl extends React.Component {
   render(){
     let currentlyVisibleContent = null;
     if (this.state.formVisibleOnPage){
-      currentlyVisibleContent = <NewKegForm kegList={this.props.kegList} onNewKegCreation={this.props.onNewKegCreation} currentRouterPath={this.props.currentRouterPath} onKegSelection={this.props.onKegSelection} />;
+      currentlyVisibleContent = <NewKegForm kegList={this.props.kegList} onNewKegCreation={this.props.onNewKegCreation} currentRouterPath={this.props.currentRouterPath} onKegSelection={this.props.onKegSelection}
+      selectedKeg={this.props.selectedKeg} />;
     } else {
       currentlyVisibleContent = <ConfirmationStep onEmployeeConfirmation={this.handleEmployeeConfirmation} />
     }
@@ -44,7 +45,8 @@ NewKegControl.propTypes = {
   onNewKegCreation: PropTypes.func,
   kegList: PropTypes.array,
   currentRouterPath: PropTypes.string.isRequired,
-  onKegSelection: PropTypes.func
+  onKegSelection: PropTypes.func,
+  selectedKeg: PropTypes.object
 }
 
 export default NewKegControl;

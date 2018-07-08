@@ -24,7 +24,7 @@ class App extends React.Component {
           id: "1"
         },
         {
-          img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVWEzweNWFIf_y4Vr2Jp3lzVejwszrND5pB2-4SQkV9lUyQfUR',
+          img: 'https://stillmankbrewing.com/wp-content/uploads/2018/01/wiscodisco12oz-300x300.jpg',
           name: "800 HG",
           maker: 'Olde Englilsh',
           abv: 7.5,
@@ -71,7 +71,8 @@ class App extends React.Component {
           <Switch>
             <Route exact path='/' render={()=><KegList kegList={this.state.masterKegList} />} />
 
-            <Route path='/newkeg' render={(props)=><NewKegControl  kegList={this.state.masterKegList} onNewKegCreation={this.handleAddingNewKegToList} currentRouterPath={props.location.pathname} onKegSelection={this.handleChangingSelectedKeg} />} />
+            <Route path='/newkeg' render={(props)=><NewKegControl  kegList={this.state.masterKegList} onNewKegCreation={this.handleAddingNewKegToList} currentRouterPath={props.location.pathname} onKegSelection={this.handleChangingSelectedKeg}
+            selectedKeg={this.state.selectedKeg} />} />
 
             <Route path='/food' component={FoodList} />
             <Route component={Error404} />
