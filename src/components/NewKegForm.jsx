@@ -4,6 +4,7 @@ import { v4 } from 'uuid';
 import KegList from './KegList';
 
 function NewKegForm(props){
+  console.log(props.currentRouterPath);
   let _img = null;
   let _name = null;
   let _maker = null;
@@ -57,14 +58,15 @@ function NewKegForm(props){
           <button type="submit">Add Keg</button>
         </form>
       </div>
-      <KegList kegList={props.kegList} />
+      <KegList kegList={props.kegList} currentRouterPath={props.currentRouterPath} />
     </div>
   )
 }
 
 NewKegForm.propTypes = {
   onNewKegCreation: PropTypes.func,
-  kegList: PropTypes.array
+  kegList: PropTypes.array,
+  currentRouterPath: PropTypes.string.isRequired
 }
 
 export default NewKegForm;
