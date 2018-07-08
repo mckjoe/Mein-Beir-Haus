@@ -43,6 +43,7 @@ class App extends React.Component {
     };
     this.handleAddingNewKegToList = this.handleAddingNewKegToList.bind(this);
     this.handleChangingSelectedKeg = this.handleChangingSelectedKeg.bind(this);
+    this.handleClosingDetailWindow = this.handleClosingDetailWindow.bind(this);
   }
 
   handleAddingNewKegToList(newKeg){
@@ -55,6 +56,10 @@ class App extends React.Component {
 
   handleChangingSelectedKeg(kegId){
     this.setState({selectedKeg: kegId})
+  }
+
+  handleClosingDetailWindow() {
+    this.setState({selectedKeg: null})
   }
 
   render(){
@@ -72,7 +77,7 @@ class App extends React.Component {
             <Route exact path='/' render={()=><KegList kegList={this.state.masterKegList} />} />
 
             <Route path='/newkeg' render={(props)=><NewKegControl  kegList={this.state.masterKegList} onNewKegCreation={this.handleAddingNewKegToList} currentRouterPath={props.location.pathname} onKegSelection={this.handleChangingSelectedKeg}
-            selectedKeg={this.state.selectedKeg} />} />
+            selectedKeg={this.state.selectedKeg} onCloseDetailWindow={this.handleClosingDetailWindow}/>} />
 
             <Route path='/food' component={FoodList} />
             <Route component={Error404} />

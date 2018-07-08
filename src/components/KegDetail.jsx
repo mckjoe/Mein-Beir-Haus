@@ -31,7 +31,7 @@ function KegDetail(props){
           <p>${props.selectedKeg.cost}</p>
           <p>{props.selectedKeg.pints} Remaining in current keg</p>
           <button>Sell Pint</button>
-          <button>Close Window</button>
+          <button onClick={props.onCloseDetailWindow}>Close Window</button>
         </div>
       </div>
     </div>
@@ -39,7 +39,8 @@ function KegDetail(props){
 }
 
 KegDetail.propTypes = {
-  selectedKeg: PropTypes.object
+  selectedKeg: PropTypes.object,
+  onCloseDetailWindow: PropTypes.func
 }
 
 export default KegDetail;
