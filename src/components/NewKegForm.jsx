@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { v4 } from 'uuid';
 import KegList from './KegList';
+import KegDetail from './KegDetail';
 
 function NewKegForm(props){
   console.log(props.currentRouterPath);
@@ -58,7 +59,8 @@ function NewKegForm(props){
           <button type="submit">Add Keg</button>
         </form>
       </div>
-      <KegList kegList={props.kegList} currentRouterPath={props.currentRouterPath} />
+      <KegDetail />
+      <KegList kegList={props.kegList} currentRouterPath={props.currentRouterPath} onKegSelection={props.onKegSelection} />
     </div>
   )
 }
@@ -66,7 +68,8 @@ function NewKegForm(props){
 NewKegForm.propTypes = {
   onNewKegCreation: PropTypes.func,
   kegList: PropTypes.array,
-  currentRouterPath: PropTypes.string.isRequired
+  currentRouterPath: PropTypes.string.isRequired,
+  onKegSelection: PropTypes.func.isRequired
 }
 
 export default NewKegForm;
