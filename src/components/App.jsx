@@ -13,52 +13,52 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      masterKegList: [
-        {
+      masterKegList: {
+       '1' : {
           img: 'https://stillmankbrewing.com/wp-content/uploads/2018/03/Squeezins-300x300.png',
           name: 'MGD',
           maker: 'Miller',
           abv: 4.66,
           cost: '3.00',
           pints: 124,
-          id: "1"
         },
-        {
+        '2' : {
           img: 'https://stillmankbrewing.com/wp-content/uploads/2018/01/wiscodisco12oz-300x300.jpg',
           name: "800 HG",
           maker: 'Olde Englilsh',
           abv: 7.5,
           cost: '2.00',
           pints: 124,
-          id: "2"
         },
-        {
+        '3': {
           img: 'https://hips.hearstapps.com/pop.h-cdn.co/assets/cm/15/05/54cb236e6459e_-_xmas-beer-1213-mdn.jpg',
           name: 'Best Ice',
           maker: 'Milwaukees Best',
           abv: 6.9,
           cost: '3.00',
           pints: 124,
-          id: "3"
         }
-      ],
+      },
       selectedKeg: null
     };
     this.handleAddingNewKegToList = this.handleAddingNewKegToList.bind(this);
     this.handleChangingSelectedKeg = this.handleChangingSelectedKeg.bind(this);
   }
 
-  handleAddingNewKegToList(newKeg) {
-    let newMasterKegList = this.state.masterKegList.slice();
-    newMasterKegList.push(newKeg);
+  handleAddingNewKegToList(newKeg){
+    var newMasterKegList = Object.assign({}, this.state.masterKegList, {
+      [newKeg.id]: newKeg
+    });
     this.setState({masterKegList: newMasterKegList});
   }
 
-  handleChangingSelectedKeg(keg){
-    this.setState({selectedKeg: keg})
+
+  handleChangingSelectedKeg(kegId){
+    this.setState({selectedKeg: kegId})
   }
 
   render(){
+    console.log(this.state.masterKegList)
     return(
       <div>
       <style global jsx>{`

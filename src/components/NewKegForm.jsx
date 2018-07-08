@@ -7,7 +7,7 @@ import KegDetail from './KegDetail';
 function NewKegForm(props){
   let optionalSelectedKegContent = null;
   if (props.selectedKeg != null) {
-    optionalSelectedKegContent = <KegDetail selectedKeg={props.selectedKeg} />;
+    optionalSelectedKegContent = <KegDetail selectedKeg={props.kegList[props.selectedKeg]} />;
   }
   let _img = null;
   let _name = null;
@@ -48,7 +48,7 @@ function NewKegForm(props){
           margin: 25px auto 30px auto ;
         }
         div {
-          color: black
+          color: black;
         }
       `}</style>
       <div>
@@ -71,10 +71,10 @@ function NewKegForm(props){
 
 NewKegForm.propTypes = {
   onNewKegCreation: PropTypes.func,
-  kegList: PropTypes.array,
+  kegList: PropTypes.object,
   currentRouterPath: PropTypes.string.isRequired,
   onKegSelection: PropTypes.func.isRequired,
-  selectedKeg: PropTypes.object
+  selectedKeg: PropTypes.string
 }
 
 export default NewKegForm;

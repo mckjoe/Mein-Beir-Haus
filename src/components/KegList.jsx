@@ -3,7 +3,6 @@ import Keg from './Keg';
 import PropTypes from 'prop-types';
 
 function KegList(props){
-  console.log(props.kegList);
   return(
     <div>
       <style jsx>{`
@@ -23,26 +22,28 @@ function KegList(props){
       `}</style>
       <hr/>
       <div className="grid">
-      {props.kegList.map((keg) =>
-        <Keg img={keg.img}
-          name={keg.name}
-          maker={keg.maker}
-          abv={keg.abv}
-          cost={keg.cost}
-          pints={keg.pints}
-          currentRouterPath={props.currentRouterPath}
-          key={keg.id}
-          onKegSelection={props.onKegSelection} />
-      )}
-      </div>
+        {Object.keys(props.kegList).map(function(kegId) {
+          var keg = props.kegList[kegId];
+          return <Keg img={keg.img}
+            name={keg.name}
+            maker={keg.maker}
+            abv={keg.abv}
+            cost={keg.cost}
+            pints={keg.pints}
+            currentRouterPath={props.currentRouterPath}
+            key={kegId}
+            onKegSelection={props.onKegSelection}
+            kegId={kegId} />
+        })}
+        </div>
     </div>
   )
 }
 
 KegList.propTypes = {
-  kegList: PropTypes.array,
+  kegList: PropTypes.object,
   currentRouterPath: PropTypes.string,
-  onKegSelection: PropTypes.func
+  onKegSelection: PropTypes.func,
 }
 
 export default KegList;

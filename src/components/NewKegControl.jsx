@@ -43,10 +43,10 @@ class NewKegControl extends React.Component {
 
 NewKegControl.propTypes = {
   onNewKegCreation: PropTypes.func,
-  kegList: PropTypes.array,
+  kegList: PropTypes.object,
   currentRouterPath: PropTypes.string.isRequired,
   onKegSelection: PropTypes.func,
-  selectedKeg: PropTypes.object
+  selectedKeg: PropTypes.string
 }
 
 export default NewKegControl;

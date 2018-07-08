@@ -7,12 +7,14 @@ function ConfirmationStep(props){
       <style jsx>{`
         div {
           color: white;
+          padding-left: 5px;
+          padding-right: 5px;
         }
         input {
           margin: 0 15px 15px 15px;
         }
         input:nth-of-type(1) {
-          margin-left: 30px;
+          margin-left: 10px;
         }
         button {
           margin-left: 15px;

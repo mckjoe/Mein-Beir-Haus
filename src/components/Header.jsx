@@ -15,7 +15,7 @@ function Header() {
       <div>
         <h1>Mein Bier Haus</h1>
         <div className="flexed">
-          <Link to="/">Home</Link> | <Link to="/newkeg">New Keg</Link> | <Link to="/food">Food Menu</Link>
+          <Link to="/">Home</Link> | <Link to="/newkeg">Employees</Link> | <Link to="/food">Food Menu</Link>
         </div>
       </div>
     </div>

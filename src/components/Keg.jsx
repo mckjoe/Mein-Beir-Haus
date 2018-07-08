@@ -33,7 +33,7 @@ function Keg(props) {
     </div>
     if (props.currentRouterPath === '/newkeg'){
       return (
-        <div onClick={() => {props.onKegSelection({img: props.img, name: props.name, maker: props.maker, abv: props.abv, cost: props.cost, pints: props.pints});}}>
+        <div onClick={() => {props.onKegSelection(props.kegId);}}>
           {kegInformation}
         </div>
       );
@@ -54,7 +54,8 @@ Keg.propTypes = {
   cost: PropTypes.string.isRequired,
   pints: PropTypes.number.isRequired,
   currentRouterPath: PropTypes.string,
-  onKegSelection: PropTypes.func
+  onKegSelection: PropTypes.func,
+  kegId: PropTypes.string.isRequired
 }
 
 export default Keg;

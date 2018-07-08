@@ -27,7 +27,6 @@ function KegDetail(props){
         <img src={props.selectedKeg.img} />
         <div className="flex">
           <h2>{props.selectedKeg.maker} - {props.selectedKeg.name}</h2>
-          <p></p>
           <p>{props.selectedKeg.abv}% Alcohol By Volume</p>
           <p>${props.selectedKeg.cost}</p>
           <p>{props.selectedKeg.pints} Remaining in current keg</p>
